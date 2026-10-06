@@ -1,0 +1,36 @@
+{
+  "canvas": {"width": 1080, "height": 1920, "fps": 30, "background": "#000000"},
+  "scenes": [
+    {
+      "id": "grid_intro", "duration": 4.0, "background": ["#0f0f14", "#1d1d2b"],
+      "transition_out": {"type": "slide_from_right", "duration": 0.5},
+      "layers": [
+        {"type": "grid", "id": "g1", "rows": 3, "cols": 3, "rect": [0, 0, 1, 1],
+         "margin": 0.04, "gap": 0.015, "order": "row_major", "start": 0.3, "stagger": 0.25,
+         "radius": 0.02, "accepts": "any",
+         "entry": {"type": "scale_pop", "duration": 0.45, "easing": "ease_out_back"}}
+      ]
+    },
+    {
+      "id": "hero", "duration": 3.5, "background": "#000000",
+      "transition_out": {"type": "fade", "duration": 0.4},
+      "layers": [
+        {"type": "media", "slot": "hero", "rect": [0, 0, 1, 1], "fit": "cover", "prefer": "portrait",
+         "motion": {"zoom": [1.0, 1.15]}, "entry": {"type": "fade", "duration": 0.3}},
+        {"type": "text", "text_slot": "title", "text": "My Story", "size": 0.09, "pos": [0.5, 0.82],
+         "color": "#ffffff", "stroke": 0.004, "start": 0.6,
+         "entry": {"type": "slide_from_bottom", "duration": 0.5, "easing": "ease_out"}}
+      ]
+    },
+    {
+      "id": "pair", "duration": 3.0, "background": "#f2efe9",
+      "layers": [
+        {"type": "media", "slot": "pair_top", "rect": [0.06, 0.08, 0.88, 0.40], "fit": "cover", "radius": 0.03,
+         "prefer": "landscape", "start": 0.2, "entry": {"type": "slide_from_left", "duration": 0.6, "easing": "ease_out"}},
+        {"type": "media", "slot": "pair_bottom", "rect": [0.06, 0.52, 0.88, 0.40], "fit": "cover", "radius": 0.03,
+         "prefer": "landscape", "start": 0.5, "entry": {"type": "slide_from_right", "duration": 0.6, "easing": "ease_out"},
+         "exit": {"type": "fade", "duration": 0.4}}
+      ]
+    }
+  ]
+}
